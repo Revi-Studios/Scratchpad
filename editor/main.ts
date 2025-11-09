@@ -1,9 +1,12 @@
-import { Game } from "../lib/game";
+import { Game } from "../lib/game/game";
+import { init } from "./func/init";
+import { renderScenes } from "./func/render_scenes";
 
 const gameCanvas = document.getElementById("game") as HTMLCanvasElement;
-const flagButton = document.getElementById("flag") as Element;
-const game = new Game(gameCanvas);
+export const flag = document.getElementById("flag") as Element;
+export const sceneView = document.getElementById("scenes") as HTMLDivElement;
 
-flagButton.addEventListener("click", () => {
-  game.start();
-});
+export const game = new Game(gameCanvas);
+
+// init();
+renderScenes(game.scenes, sceneView);

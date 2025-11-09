@@ -57,14 +57,20 @@
                 </row>
                 <canvas id="game" width="420" height="320"></canvas>
                 <row style="flex-grow: 1; flex-direction: row-reverse">
-                    <column class="list scenes" style="width: 70px; margin: 10px"></column>
+                    <column
+                        id="scenes"
+                        class="list"
+                        style="width: 70px; margin: 10px; padding: 10px 0px"
+                    ></column>
                     <column style="flex-grow: 1"></column>
                 </row>
             </column>
         </row>
     </body>
     <script type="module" src="editor/main.ts"></script>
-    <script type="module" src="lib/game.ts"></script>
-    <script type="module" src="lib/game_object.ts"></script>
-    <script type="module" src="lib/scene.ts"></script>
+    <script type="module" src="editor/func/init.ts"></script>
+    <script type="module" src="editor/func/render_scenes.ts"></script>
+    <script type="module" src="lib/game/game.ts"></script>
+    <script type="module" src="lib/game/game_object.ts"></script>
+    <script type="module" src="lib/game/scene.ts"></script>
 </html>
