@@ -1,0 +1,16 @@
+row {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--border-color);
+}
+
+column {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+column.list {
+    background-color: var(--list-bg-color);
+    border-radius: 10px;
+}
