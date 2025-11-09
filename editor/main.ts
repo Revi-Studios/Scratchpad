@@ -1,4 +1,4 @@
-import { Game } from "../lib/game/game";
+import { Game } from "../lib/game";
 import { init } from "./func/init";
 import { renderScenes } from "./func/render_scenes";
 

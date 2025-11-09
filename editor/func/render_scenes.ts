@@ -1,4 +1,4 @@
-import { Scene } from "../../lib/game/scene";
+import { Scene } from "../../lib/scene";
 import { sceneView } from "../main";
 import { addScene } from "./add_scene";
 

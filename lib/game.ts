@@ -16,7 +16,6 @@ export class Game {
   start(): void {
     console.log("Game: Starting Game");
     this.lastTime = performance.now();
-    this.currentScene = new Scene();
     this.gameLoop(this.lastTime);
   }
 

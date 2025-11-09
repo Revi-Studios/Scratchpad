@@ -1,8 +1,10 @@
-import { Scene } from "../../lib/game/scene";
+import { Scene } from "../../lib/scene";
 import { game } from "../main";
 import { renderScenes } from "./render_scenes";
 
 export function addScene(name: string) {
-  game.scenes.push(new Scene(name));
+  const scene = new Scene(name);
+  game.scenes.push(scene);
+  game.currentScene = scene;
   renderScenes(game.scenes);
 }
