@@ -6,72 +6,66 @@
         <link rel="stylesheet" href="editor/styles/components.css" />
         <link rel="stylesheet" href="editor/styles/style.css" />
         <title>ScratchPad</title>
+        <style>
+            :root {
+                --panel-bg-color: rgb(21, 21, 21);
+                --border-color: rgba(255, 255, 255, 0.05);
+                --editor-bg-color: rgb(32, 32, 32);
+                --base-bg-color: rgb(17, 17, 17);
+                --list-bg-color: rgb(21, 21, 21);
+                --container-bg-color: rgb(32, 32, 32);
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                margin: 0px;
+                background-color: var(--base-bg-color);
+                color: white;
+                padding: 10px;
+            }
+
+            canvas {
+                border: 1px solid var(--border-color);
+                border-radius: 10px;
+                display: block;
+                width: 500px;
+                height: 300px;
+            }
+
+            button {
+                padding: 5px;
+                border-radius: 7px;
+                border: 0.5px solid var(--border-color);
+                display: flexbox;
+                flex-grow: 0;
+                background-color: var(--container-bg-color);
+                color: white;
+            }
+            column {
+                display: flex;
+                flex-direction: column;
+            }
+            p {
+                padding: 5px;
+                background-color: var(--container-bg-color);
+                border: 1px solid var(--border-color);
+                border-radius: 10px;
+            }
+        </style>
     </head>
     <body>
-        <row id="top-bar"><p>Scratchpad</p></row>
-        <row style="flex-grow: 1">
-            <column class="list" style="width: 200px"></column>
-            <column></column>
-            <column style="margin-left: auto">
-                <row style="padding: 5px; background-color: var(--panel-bg-color)">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="30px"
-                        height="30px"
-                        viewBox="0 0 30 30"
-                        version="1.1"
-                        id="flag"
-                    >
-                        <g id="surface1">
-                            <path
-                                style="
-                                    fill-rule: nonzero;
-                                    fill: rgb(29.803923%, 74.901962%, 33.725491%);
-                                    fill-opacity: 1;
-                                    stroke-width: 1;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke: rgb(27.058825%, 60.000002%, 23.921569%);
-                                    stroke-opacity: 1;
-                                    stroke-miterlimit: 4;
-                                "
-                                d="M 0.749216 2.000177 C 3.03151 0.301257 6.158297 0.301257 8.440591 2.000177 C 10.722885 3.699096 13.847506 3.699096 16.1298 2.000177 L 16.1298 12.40004 C 13.847506 14.09896 10.722885 14.09896 8.440591 12.40004 C 6.158297 10.701121 3.03151 10.701121 0.749216 12.40004 "
-                                transform="matrix(1.803969,0,0,1.703748,0,0.0922021)"
-                            />
-                            <path
-                                style="
-                                    fill: none;
-                                    stroke-width: 1.5;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke: rgb(27.058825%, 60.000002%, 23.921569%);
-                                    stroke-opacity: 1;
-                                    stroke-miterlimit: 4;
-                                "
-                                d="M 0.749216 16.749366 L 0.749216 0.750634 "
-                                transform="matrix(1.803969,0,0,1.703748,0,0.0922021)"
-                            />
-                        </g>
-                    </svg>
-                </row>
-                <canvas id="game" width="420" height="320"></canvas>
-                <row style="flex-grow: 1; flex-direction: row-reverse">
-                    <column
-                        id="scenes"
-                        class="list"
-                        style="width: 70px; margin: 10px; padding: 10px 0px"
-                    ></column>
-                    <column style="flex-grow: 1"></column>
-                </row>
-            </column>
-        </row>
+        <body id="body">
+            <column> </column>
+            <div style="padding: 5px">
+                <button id="start-game">Start Game</button>
+                <button id="pause-game">Pause</button>
+            </div>
+            <canvas id="game-view" width="500" height="300"></canvas>
+        </body>
     </body>
-    <script type="module" src="editor/main.ts"></script>
-    <script type="module" src="editor/func/init.ts"></script>
-    <script type="module" src="editor/func/render_scenes.ts"></script>
-    <script type="module" src="editor/func/add_scene.ts"></script>
-    <script type="module" src="lib/game.ts"></script>
+    <script src="editor/main.ts"></script>
+    <script type="module" src="lib/game_engine.ts"></script>
     <script type="module" src="lib/game_object.ts"></script>
     <script type="module" src="lib/scene.ts"></script>
 </html>

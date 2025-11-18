@@ -1,14 +1,27 @@
 import { GameObject } from "./game_object";
 
 export class Scene {
-  public gameObjects: GameObject[] = [];
   public name: string;
+  public gameObjects: GameObject[] = [];
+  public backgroundColor: string = "#FFFFFF";
 
   constructor(name: string) {
     this.name = name;
   }
 
-  public start(): void {
-    this.gameObjects.forEach((o) => o.start());
+  public start() {
+    this.gameObjects.forEach((gameObject) => {
+      gameObject.start();
+    });
+  }
+
+  public update(deltaTime: number) {
+    this.gameObjects.forEach((gameObject) => {
+      gameObject.update(deltaTime);
+    });
+  }
+
+  public addObject(gameObject: GameObject) {
+    this.gameObjects.push(gameObject);
   }
 }
